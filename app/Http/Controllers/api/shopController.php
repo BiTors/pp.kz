@@ -23,12 +23,4 @@ class shopController extends Controller
         return response()->json($dataBay);
     }
 
-    public function withValidator($validator)
-    {
-        $validator->after(function ($validator) {
-            if ($this->somethingElseIsInvalid()) {
-                $validator->errors()->add('field', 'Something is wrong with this field!');
-            }
-        });
-    }
 }
